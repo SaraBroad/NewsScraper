@@ -7,3 +7,9 @@
 .container-fluid {
     background-color: #E6320B;
 }
+
+img {
+    height: 300px;
+    width: 100%;
+    border: 0;
+}
