@@ -30,13 +30,12 @@
 
 <div class="panel panel-default">
     {{#each Article}}
-
     <div class="panel-heading">
         {{this.title}}
         <button type="submit" class="btn btn-default">Save Article</button>
     </div>
     <div class="panel-body">
-        Panel content
+    {{this.summary}}
     </div>
     {{/each}}
 </div>
