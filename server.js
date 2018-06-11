@@ -6,7 +6,6 @@ var mongoose = require("mongoose");
 var cheerio = require("cheerio");
 var request = require("request");
 
-
 var PORT = process.env.PORT || 8080;
 
 
@@ -14,14 +13,17 @@ var app = express();
 
 app.use(logger("dev"));
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
 
 
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var routes = require("./routes");
+app.use(routes);
 
 // mongoose.connect("mongodb://localhost/NewsScraper");
 
