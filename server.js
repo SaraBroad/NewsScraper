@@ -24,10 +24,11 @@ app.use(bodyParser.json());
 
 var routes = require("./routes");
 app.use(routes);
-var apiroutes = require("./routes/api/scraper");
+
+var apiroutes = require("./routes/api/scraper.js");
 app.use(apiroutes);
 
-// mongoose.connect("mongodb://localhost/NewsScraper");
+mongoose.connect("mongodb://localhost/NewsScraper");
 
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);

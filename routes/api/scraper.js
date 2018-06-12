@@ -1,8 +1,8 @@
 var router = require("express").Router();
 
-var scrapeController = require("../../controllers/scrapecontroller");
+// var scrapeController = require("../../controllers/scrapercontroller");
 
-app.get("/scrape", scrapeController.scraper)
+// router.get("/scrape", scrapeController.scraper)
 
 
 module.exports = router;
