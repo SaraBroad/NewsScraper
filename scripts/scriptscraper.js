@@ -9,14 +9,16 @@ var axios = require("axios");
 //this function should return an array of articles
 module.exports = function() {
     app.get("/scrape", function (req, res){
+        var $ = cheerio.load(response.data);
         axios.get("https://www.bbc.com").then(function(response){
-            var $ = cheerio.load(response.data);
+            
+            var result = {};
+
             $(".media__content").each(function(i, element){
             var title = $(element).children('h3').children("a").text();
             var link = $(element).children("a").attr("href");
             var summary = $(element).children("p").text();
-            var result = {};
-
+            
             }); 
         })
     });
